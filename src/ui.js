@@ -1,5 +1,5 @@
 class UI {
-  constructor(){
+  constructor() {
     this.location = document.getElementById('w-location');
     this.description = document.getElementById('w-desc');
     this.temperature = document.getElementById('w-string');
@@ -11,9 +11,9 @@ class UI {
     this.wind = document.getElementById('w-wind');
   }
 
-  render(weather){
+  render(weather) {
     this.location.textContent = weather.name;
-    this.description.textContent = weather.weather[0].description.toUpperCase();
+    this.description.textContent = weather.weather[0].description;
     this.temperature.textContent = `${weather.main.temp}° F(${weather.cel}° C)`;
     this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
     this.humidity.textContent = `Relative Himidity: ${weather.main.humidity}%`;
