@@ -11,14 +11,14 @@ class UI {
     this.wind = document.getElementById('w-wind');
   }
 
-  paint(weather){
+  render(weather){
     this.location.textContent = weather.name;
-    this.description.textContent = weather.weather[0].description;
-    this.temperature.textContent = weather.main.temp;
+    this.description.textContent = weather.weather[0].description.toUpperCase();
+    this.temperature.textContent = `${weather.main.temp}° F(${weather.cel}° C)`;
     this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
     this.humidity.textContent = `Relative Himidity: ${weather.main.humidity}%`;
-    this.feelsLike.textContent = `Feels like: ${weather.main.feels_like}`;
-    this.pressure.textContent = `Pressure: ${weather.main.pressure}`;
-    this.wind.textContent = `Wind: ${weather.wind.deg} degrees at ${weather.wind.speed} MPH`;
+    this.feelsLike.textContent = `Feels like: ${weather.main.feels_like}° F(${weather.feelsLikeCel}° C)`;
+    this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`;
+    this.wind.textContent = `Wind Direction: ${weather.wind.deg}° at ${weather.wind.speed} m/s`;
   }
 }

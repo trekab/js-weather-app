@@ -4,21 +4,24 @@ class Weather {
     this.city = city;
   }
 
-  // Fetch weather from API
   async getWeather(){
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}`);
 
+    const responseMetric = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`);
+
     const responseData = await response.json();
+    const responseDataMetric = await responseMetric.json();
 
     return {
       name: responseData.name,
       main: responseData.main,
       weather: responseData.weather,
-      wind: responseData.wind
+      wind: responseData.wind,
+      cel: responseDataMetric.main.temp,
+      feelsLikeCel: responseDataMetric.main.feels_like
     };
   }
 
-  // Change weather location
   changeLocation(city){
     this.city = city;
   }
