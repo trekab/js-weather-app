@@ -11,8 +11,10 @@ class Weather {
     const responseData = await response.json();
 
     return {
+      name: responseData.name,
       main: responseData.main,
-      weather: responseData.weather
+      weather: responseData.weather,
+      wind: responseData.wind
     };
   }
 
