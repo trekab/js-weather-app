@@ -19,3 +19,5 @@ class Storage {
     localStorage.setItem('city', city);
   }
 }
+
+export default Storage;

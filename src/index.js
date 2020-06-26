@@ -1,3 +1,7 @@
+import Weather from './weather';
+import UI from './ui';
+import Storage from './storage';
+
 const storage = new Storage();
 const weatherLocation = storage.getLocationData();
 const weather = new Weather(weatherLocation.city);

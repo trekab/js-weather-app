@@ -22,3 +22,5 @@ class UI {
     this.wind.textContent = `Wind Direction: ${weather.wind.deg}° at ${weather.wind.speed} m/s`;
   }
 }
+
+export default UI;
