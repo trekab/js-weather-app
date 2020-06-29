@@ -14,21 +14,10 @@ class UI {
   render(weather) {
     this.location.textContent = weather.name;
     this.description.textContent = weather.weather[0].description;
-    this.temperature.textContent = `${weather.main.temp}° F`;
+    this.temperature.textContent = `${weather.main.temp.toFixed()}° F`;
     this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
     this.humidity.textContent = `Relative Himidity: ${weather.main.humidity}%`;
-    this.feelsLike.textContent = `Feels like: ${weather.main.feels_like}° F`; // (${weather.feelsLikeCel}° C)
-    this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`;
-    this.wind.textContent = `Wind Direction: ${weather.wind.deg}° at ${weather.wind.speed} m/s`;
-  }
-
-  renderCel(weather) {
-    this.location.textContent = weather.name;
-    this.description.textContent = weather.weather[0].description;
-    this.temperature.textContent = `${weather.cel}° C`;
-    this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
-    this.humidity.textContent = `Relative Himidity: ${weather.main.humidity}%`;
-    this.feelsLike.textContent = `Feels like: ${weather.feelsLikeCel}° C`;
+    this.feelsLike.textContent = `Feels like: ${weather.main.feels_like}° F`;
     this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`;
     this.wind.textContent = `Wind Direction: ${weather.wind.deg}° at ${weather.wind.speed} m/s`;
   }

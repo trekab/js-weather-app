@@ -5,20 +5,15 @@ class Weather {
   }
 
   async getWeather() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}`);
-
-    const responseMetric = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=metric`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.apiKey}&units=imperial`);
 
     const responseData = await response.json();
-    const responseDataMetric = await responseMetric.json();
 
     return {
       name: responseData.name,
       main: responseData.main,
       weather: responseData.weather,
       wind: responseData.wind,
-      cel: responseDataMetric.main.temp,
-      feelsLikeCel: responseDataMetric.main.feels_like,
     };
   }
 

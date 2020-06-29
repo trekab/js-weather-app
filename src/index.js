@@ -9,18 +9,18 @@ const temperature = document.getElementById('w-string');
 const toggleTemp = document.getElementById('toggle-temp');
 const ui = new UI();
 
+function toF(temp) {
+  return (temp * (9 / 5)) + 32;
+}
+
+function toC(temp) {
+  return (temp - 32) * (5 / 9);
+}
+
 function getWeather() {
   weather.getWeather()
     .then(results => {
       ui.render(results);
-    })
-    .catch(err => err);
-}
-
-function getWeatherCel() {
-  weather.getWeather()
-    .then(results => {
-      ui.renderCel(results);
     })
     .catch(err => err);
 }
@@ -40,8 +40,8 @@ document.getElementById('w-change-btn').addEventListener('click', () => {
 
 toggleTemp.addEventListener('click', () => {
   if (temperature.textContent.substr(-1) === 'F') {
-    getWeatherCel();
+    temperature.textContent = `${toC(parseInt(temperature.textContent, 10)).toFixed()} °C`;
   } else {
-    getWeather();
+    temperature.textContent = `${toF(parseInt(temperature.textContent, 10)).toFixed()} °F`;
   }
 });
