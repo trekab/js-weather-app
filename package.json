@@ -1,0 +1,24 @@
+{
+  "name": "js-weather-app",
+  "version": "1.0.0",
+  "description": "> This is a JS Weather app where users can search for current weather conditions of a given city.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trekab/js-weather-app.git"
+  },
+  "author": "Treasure",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trekab/js-weather-app/issues"
+  },
+  "homepage": "https://github.com/trekab/js-weather-app#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {}
+}
