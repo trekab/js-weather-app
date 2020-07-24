@@ -20,12 +20,10 @@
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
-
-To get a local copy up and running follow these simple example steps.
-- git clone git@github.com:trekab/js-weather-app.git
+- run `git clone git@github.com:trekab/js-weather-app.git` in the terminal
 
 Navigate to the root directory
-- cd js-weather-app
+- `cd js-weather-app`
 
 Run npm install to ensure all the needed packages and dependencies are installed:
 - `$ npm install`
