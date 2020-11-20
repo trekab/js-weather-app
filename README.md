@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/trekab/js-weather-app/691ba7f406fb5b03323b1c4a8ea1eac5e705d74c/dist/index.html)
+[Live Demo Link](https://trekabs-js-weather-app.netlify.app/)
 
 
 ## Getting Started
