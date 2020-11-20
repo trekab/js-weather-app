@@ -9,15 +9,15 @@ const temperature = document.getElementById('w-string');
 const toggleTemp = document.getElementById('toggle-temp');
 const ui = new UI();
 
-function toF(temp) {
+const toF = (temp) => {
   return (temp * (9 / 5)) + 32;
-}
+};
 
-function toC(temp) {
+const toC = (temp) => {
   return (temp - 32) * (5 / 9);
-}
+};
 
-function getWeather() {
+const getWeather = () => {
   weather.getWeather()
     .then(results => {
       ui.render(results);
