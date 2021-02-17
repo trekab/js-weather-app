@@ -2,11 +2,11 @@
   "name": "js-weather-app",
   "version": "1.0.0",
   "description": "> This is a JS Weather app where users can search for current weather conditions of a given city.",
-  "main": "webpack.config.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,7 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
-  "dependencies": {}
+  "dependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
 }
